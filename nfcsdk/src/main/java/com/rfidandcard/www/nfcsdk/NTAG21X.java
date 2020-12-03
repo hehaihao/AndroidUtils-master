@@ -117,7 +117,7 @@ public class NTAG21X extends NTAG {
     }
     //是否包含TT功能
     public boolean isHasTT() {
-        return major == 3;
+        return (major == 3 || major == 1);
     }
     //
     public void debug() {
