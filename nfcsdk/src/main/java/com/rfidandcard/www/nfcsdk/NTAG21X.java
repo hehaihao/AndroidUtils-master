@@ -91,8 +91,12 @@ public class NTAG21X extends NTAG {
     //设置卡密码
     public void setPassword(byte[] pass) throws IOException {
         int addr = 0;
-        if(this.type == NTAG213){
+        if(NTAG213.equals(this.type)){
             addr = 0x2B;
+        }else if(NTAG215.equals(this.type)){
+            addr = 0x85;
+        }else if(NTAG216.equals(this.type)){
+            addr = 0xE5;
         }
         write(addr,pass);
     }
