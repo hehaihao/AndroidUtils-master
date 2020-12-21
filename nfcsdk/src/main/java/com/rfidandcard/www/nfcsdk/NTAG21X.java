@@ -76,6 +76,8 @@ public class NTAG21X extends NTAG {
             type = NTAG213;
         }else if(storageSize == 17){
             type = NTAG215;
+        }else if(storageSize == 19){
+            type = NTAG216;
         }else{
 //            throw new NFCException("NTAG21X "+storageSize + " not imp");
         }
@@ -117,7 +119,7 @@ public class NTAG21X extends NTAG {
     }
     //是否包含TT功能
     public boolean isHasTT() {
-        return (major == 3 || major == 1);
+        return major == 3;
     }
     //
     public void debug() {
